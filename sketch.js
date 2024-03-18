@@ -109,19 +109,34 @@ function draw() {
     img3.height / 4
   );
 
+  // Box for fourth stanza 
+  fill(255, 255, 255, 150);
+  noStroke();
+  rect(windowWidth - 500, (img4.height / 2.5 + 20), 475, 375);
+  
   // Fourth stanza
   fill("black");
   textAlign(RIGHT);
   poem4 =   "Our walls do not change,\ntheir atoms remain the same\nBut every year, a new setting is created.\n1942: John Doe and a Casablanca poster\n1966: Nancy Sinatra on the Radio\n1970: Apollo 13\n2002: Gilmore Girls filmed on campus!\n2010: cellphones start to ring\n" + year + ": " + "population " + pop + "\n2024: an old whiteboard marked Oct 2023.\n2053: To be determined?";
   text(poem4, windowWidth - 50, img4.height / 2.5 + 50);
 
+  // Box for fifth stanza 
+  fill(255, 255, 255, 150);
+  rect(40, (img4.height / 2.5 + 515), 580, 170);
+  
   // Fifth stanza
+  fill("black");
   textAlign(LEFT);
-  text(poem5, 50, img4.height / 2.5 + 520);
+  text(poem5, 50, img4.height / 2.5 + 540);
+
+  // Box for sixth stanza 
+  fill(255, 255, 255, 150);
+  rect(windowWidth - 490, img4.height / 2.5 + 960, 450, 200);
 
   // Sixth stanza
+  fill("black");
   textAlign(RIGHT);
-  text(poem6, windowWidth - 50, img4.height / 2.5 + 975);
+  text(poem6, windowWidth - 50, img4.height / 2.5 + 990);
 
   // Observations
   fill("white");
