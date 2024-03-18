@@ -9,29 +9,3 @@ html, body {
 canvas {
   display: block;
 }
-
-.image-container {
-  position: relative;
-  display: inline-block;
-}
-
-.image-container img {
-  display: block;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-}
-
-.overlay-text {
-  position: absolute;
-  top: 25%; 
-  left: 25%; 
-  transform: translate(-50%, -50%); 
-  background-color: #000000; 
-  color: #fff; 
-  padding: 10px 20px; 
-  font-size: 20px; 
-  text-align: left;
-}

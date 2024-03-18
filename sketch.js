@@ -24,23 +24,22 @@ let obs9 = "No electric scooters back then?";
 let obs10 = "Beautiful fall leaves";
 
 function setup() {
-  createCanvas(windowWidth, windowHeight*3);
+  createCanvas(windowWidth, windowHeight*2.5);
   img1 = loadImage('assets/0-frontlayered.png');
   img2 = loadImage('assets/1-archlayered.png');
   img3 = loadImage('assets/3-courtyardlayered.png');
   img4 = loadImage('assets/6-aerialcrop.jpg');
 
-  temperature = Math.round(json.main.temp);
-  weather = json.weather[0].description;
+  // temperature = Math.round(json.main.temp);
 }
 
 function draw() {
   background('#f0e4bd');
   
   fill('black');
-  rect(0, 0, windowWidth, img4.height/5); 
+  rect(0, 0, windowWidth, img4.height/2.5); 
 
-  image(img4,((windowWidth - img4.width / 5)/2), 0, img4.width / 5, img4.height / 5);
+  image(img4,((windowWidth - img4.width / 2.5)/2), 0, img4.width / 2.5, img4.height / 2.5);
 
   // Box for title
   fill(0,0,0,200);
@@ -77,38 +76,38 @@ function draw() {
   text(poem3, 200, 500);
 
   // Collages 
-  image(img1, 0, img4.height/5, img1.width / 4, img1.height / 4);
-  image(img2, windowWidth - img2.width/5, img4.height/5 + 400, img2.width / 8, img2.height / 8);
-  image(img3, 0, (windowHeight*3- img3.height / 4), img3.width / 4, img3.height / 4);
+  image(img1, 0, img4.height/2.5, img1.width / 4, img1.height / 4);
+  image(img2, windowWidth - img2.width/5, img4.height/2.5 + 400, img2.width / 8, img2.height / 8);
+  image(img3, 0, (windowHeight*2.5- img3.height / 4), img3.width / 4, img3.height / 4);
 
   // Fourth stanza
   fill('black');
   textAlign(RIGHT);
-  text(poem4, windowWidth - 50, img4.height/5 + 50);
+  text(poem4, windowWidth - 50, img4.height/2.5 + 50);
 
   // Fifth stanza
   textAlign(LEFT);
-  text(poem5, 50, img4.height/5 + 520);
+  text(poem5, 50, img4.height/2.5 + 520);
 
   // Sixth stanza 
   textAlign(RIGHT);
-  text(poem6, windowWidth - 50, img4.height/5 + 975);
+  text(poem6, windowWidth - 50, img4.height/2.5 + 975);
 
   // Observations 
   fill('white');
   textAlign(CENTER);
   textSize(10);
 
-  text(obs1, 250, img4.height/5 + 215, 75);
-  text(obs2, 190, img4.height/5 + 375, 75);
-  text(obs3, 550, img4.height/5 + 190, 75);
-  text(obs4, 670, img4.height/5 + 190, 75);
-  text(obs5, 600, img4.height/5 + 250, 75);
-  text(obs6, 930, img4.height/5 + 780, 75);
-  text(obs7, 875, img4.height/5 + 650, 75);
-  text(obs8, 570, img4.height/5 + 920, 75);
-  text(obs9, 340, img4.height/5 + 920, 75);
-  text(obs10, 200, img4.height/5 + 900, 75)
+  text(obs1, 250, img4.height/2.5 + 215, 75);
+  text(obs2, 190, img4.height/2.5 + 375, 75);
+  text(obs3, 550, img4.height/2.5 + 190, 75);
+  text(obs4, 670, img4.height/2.5 + 190, 75);
+  text(obs5, 600, img4.height/2.5 + 250, 75);
+  text(obs6, 930, img4.height/2.5 + 780, 75);
+  text(obs7, 875, img4.height/2.5 + 650, 75);
+  text(obs8, 570, img4.height/2.5 + 920, 75);
+  text(obs9, 340, img4.height/2.5 + 920, 75);
+  text(obs10, 200, img4.height/2.5 + 900, 75)
 
 }
 
