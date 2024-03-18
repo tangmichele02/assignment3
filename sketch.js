@@ -33,10 +33,10 @@ let mainHeight = 2000;
 
 function setup() {
   createCanvas(windowWidth, mainHeight);
-  img1 = loadImage("0-frontlayeredcomp.png");
-  img2 = loadImage("1-archlayeredcomp.png");
-  img3 = loadImage("3-courtyardlayeredcomp.png");
-  img4 = loadImage("6-aerialcropcomp.jpg");
+  img1 = loadImage("assets/0-frontlayeredcomp.png");
+  img2 = loadImage("assets/1-archlayeredcomp.png");
+  img3 = loadImage("assets/3-courtyardlayeredcomp.png");
+  img4 = loadImage("assets/6-aerialcropcomp.jpg");
 
   // temperature = Math.round(json.main.temp);
 }
