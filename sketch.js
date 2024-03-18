@@ -1,7 +1,7 @@
 // api code source: https://editor.p5js.org/codingtrain/sketches/J_ZbkTvj2
 let temperature = 0;
 let weather = "";
-// let key = process.env.API_KEY;
+let key = process.env.API_KEY;
 let json;
 
 let title = "Clark V 427";
@@ -33,7 +33,7 @@ function setup() {
   img3 = loadImage('assets/3-courtyardlayered.png');
   img4 = loadImage('assets/6-aerialcrop.jpg');
 
-  // temperature = Math.round(json.main.temp);
+  temperature = Math.round(json.main.temp);
 }
 
 function draw() {
@@ -115,7 +115,7 @@ function draw() {
 
 }
 
-// function preload() {
-//   let url = "https://api.openweathermap.org/data/2.5/weather?q=Claremont&units=imperial&APPID=" + key;
-//   json = loadJSON(url);
-// }
+function preload() {
+  let url = "https://api.openweathermap.org/data/2.5/weather?q=Claremont&units=imperial&APPID=" + key;
+  json = loadJSON(url);
+}
