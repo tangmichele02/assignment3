@@ -1,7 +1,7 @@
 // api code source: https://editor.p5js.org/codingtrain/sketches/J_ZbkTvj2
 let temperature = 0;
 let weather = "";
-let key = "";
+let key = process.env.API_KEY;
 let json;
 
 let title = "Clark V 427";
