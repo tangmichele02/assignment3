@@ -1,17 +1,18 @@
 // api code source: https://editor.p5js.org/codingtrain/sketches/J_ZbkTvj2
 let temperature = 0;
 let weather = "";
-let key = process.env.API_KEY;
 let json;
+let year;
+let pop;
 
 let title = "Clark V 427";
-let poem1 = "";
+poem1 =
+"My room sits near the corner\nThe corner where the window sees the sidewalk.\nThe sidewalk is always busy with chatter.\nLast night's party meant gossip and jokes about\nthe weather (raining in Claremont)\nthe people (the enemies)\ntomorrow's breakfast (eggs and toast).";
 let poem2 =
   "After the party\nwhen night becomes day\nI wonder,\nwhat have these windows seen before me?\nWhose name came up in firey gossip\nHow was the weather?\nHow did they like their eggs?";
 let poem3 =
   "It started as dirt.\nThen dirt became paper\nbecame cement\nbecame walls\nfilled with echos,\nfor 93 years.";
-let poem4 =
-  "Our walls do not change,\ntheir atoms remain the same\nBut every year, a new setting is created.\n1942: John Doe and a Casablanca poster\n1966: Nancy Sinatra on the Radio\n1970: Apollo 13\n2002: Gilmore Girls filmed on campus!\n2010: cellphones start to ring\n2024: an old whiteboard marked Oct 2023.\n2053: To be determined?";
+let poem4 = "";
 let poem5 =
   "These archways covered millions of steps to and from\nDaily schedules filled with class, dining halls, laughter\nOld and new seem more similar than different.\nThe canon is the same (sadly.)\nThe eggs taste the same (sadly?)";
 let poem6 =
@@ -38,7 +39,10 @@ function setup() {
   img3 = loadImage("assets/3-courtyardlayeredcomp.png");
   img4 = loadImage("assets/6-aerialcropcomp.jpg");
 
-  temperature = Math.round(json.main.temp);
+  // temperature = Math.round(json.main.temp);
+  year = json["data"]["0"]["Year"];
+  pop = json["data"]["0"]["Population"];
+
 }
 
 function draw() {
@@ -78,11 +82,6 @@ function draw() {
   // First stanza
   textAlign(LEFT);
 
-  poem1 =
-    "My room sits near the corner\nThe corner where the window sees the sidewalk.\nThe sidewalk is always busy with chatter.\nLast night's party meant gossip and jokes about\nthe weather (" +
-    temperature +
-    " degrees in Claremont)\nthe people (the enemies)\ntomorrow's breakfast (eggs and toast).";
-
   text(poem1, 200, 75);
 
   // Second stanza
@@ -113,6 +112,7 @@ function draw() {
   // Fourth stanza
   fill("black");
   textAlign(RIGHT);
+  poem4 =   "Our walls do not change,\ntheir atoms remain the same\nBut every year, a new setting is created.\n1942: John Doe and a Casablanca poster\n1966: Nancy Sinatra on the Radio\n1970: Apollo 13\n2002: Gilmore Girls filmed on campus!\n2010: cellphones start to ring\n" + year + ": " + "population " + pop + "\n2024: an old whiteboard marked Oct 2023.\n2053: To be determined?";
   text(poem4, windowWidth - 50, img4.height / 2.5 + 50);
 
   // Fifth stanza
@@ -141,6 +141,6 @@ function draw() {
 }
 
 function preload() {
-  let url = "https://api.openweathermap.org/data/2.5/weather?q=Claremont&units=imperial&APPID=" + key;
+  let url = "https://datausa.io/api/data?drilldowns=Nation&measures=Population&year=latest";
   json = loadJSON(url);
 }
